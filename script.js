@@ -21,6 +21,22 @@ function staticLoadPlaces() {
             link: './assets/cherries/scene.gltf'
         },
         {
+            name: 'cherry',
+            link: './assets/cherries/scene.gltf'
+        },
+        {
+            name: 'cherry',
+            link: './assets/cherries/scene.gltf'
+        },
+        {
+            name: 'cherry',
+            link: './assets/cherries/scene.gltf'
+        },
+        {
+            name: 'cherry',
+            link: './assets/cherries/scene.gltf'
+        },
+        {
             name: 'magnemite',
             link: './assets/magnemite/scene.gltf'
         },
@@ -31,8 +47,11 @@ function renderPlaces(places, longitude, latitude) {
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
-        let randLatitude = latitude + random(-0.0001, 0.0001);
-        let randLongitude = longitude + random(-0.0001, 0.0001);
+        let randNum = Math.random()/10000;
+        randNum *= Math.round(Math.random()) ? 1 : -1;
+        let randLatitude = latitude + randNum;
+        randNum *= Math.round(Math.random()) ? 1 : -1;
+        let randLongitude = longitude + randNum;
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-projected-entity-place', `latitude: ${randLatitude}; longitude: ${randLongitude};`);
