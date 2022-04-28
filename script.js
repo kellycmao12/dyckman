@@ -1,22 +1,5 @@
 let firstLoc = true;
 
-
-
-
-window.onload = () => {
-    const camera = document.querySelector('a-camera');
-    window.addEventListener("gps-camera-update-position", e => {
-        if(firstLoc) {
-			firstLoc = false;
-            alert(`Got GPS: you are at: ${e.detail.position.longitude} ${e.detail.position.latitude}`);
-            // setPos(e.detail.position.longitude, e.detail.position.latitude);
-            let places = staticLoadPlaces();
-            renderPlaces(places, e.detail.position.longitude, e.detail.position.latitude);    
-        }
-    });
-    
-};
-
 function staticLoadPlaces() {
     return [
         {
@@ -92,6 +75,30 @@ function renderPlaces(places, longitude, latitude) {
 
         scene.appendChild(model);
     });
+}
+
+function startGame() {
+    console.log("start game");
+    toggleScreen('start-screen', false);
+    toggleScreen('a-scene', true);
+
+    const camera = document.querySelector('a-camera');
+    window.addEventListener("gps-camera-update-position", e => {
+        console.log(firstLoc);
+        if(firstLoc) {
+			firstLoc = false;
+            alert(`Got GPS: you are at: ${e.detail.position.longitude} ${e.detail.position.latitude}`);
+            // setPos(e.detail.position.longitude, e.detail.position.latitude);
+            let places = staticLoadPlaces();
+            renderPlaces(places, e.detail.position.longitude, e.detail.position.latitude);    
+        }
+    });
+}
+
+function toggleScreen(id, toggle) {
+    let element = document.getElementById(id);
+    let display = ( toggle ) ? 'block' : 'none';
+    element.style.display = display; 
 }
 
 // function setPos(longitude,latitude) {
