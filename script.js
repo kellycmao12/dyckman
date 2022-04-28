@@ -14,27 +14,22 @@ window.onload = () => {
 function setPos(longitude,latitude) {
 
         for (let i = 0; i < 10; i++) {
-            // construct a new box
-            box = new Box({
-                scaleX: 10, 
-                scaleY: 10, 
-                scaleZ: 10, 
-                width: 1, 
-                depth: 1, 
-                height: 1, 
-                red:255, 
-                green:0, 
-                blue:0
+            const box = document.createElement("a-box");
+            box.setAttribute('scale', {
+                x: 10, 
+                y: 10,
+                z: 10
             });
-            
+            box.setAttribute('material', {
+                color: 'red'
+            });
             box.setAttribute('gps-projected-entity-place', {
                 latitude: latitude + 0.0001 * i,
                 longitude: longitude - 0.0001 * i
             });
-            
+
             const sceneEl = document.querySelector("a-scene");
             sceneEl.appendChild(box);
-
         }
-
+        
 }
