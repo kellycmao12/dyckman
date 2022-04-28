@@ -55,7 +55,7 @@ function renderPlaces(places, longitude, latitude) {
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-projected-entity-place', `latitude: ${randLatitude}; longitude: ${randLongitude};`);
-        model.setAttribute('gltf-model', './assets/' + place.name + '/scene.gltf');
+        model.setAttribute('gltf-model', place.link);
         model.setAttribute('rotation', '0 180 0');
         model.setAttribute('scale', '0.5 0.5 0.5');
 
