@@ -1,5 +1,8 @@
 let firstLoc = true;
 
+
+
+
 window.onload = () => {
     const camera = document.querySelector('a-camera');
     window.addEventListener("gps-camera-update-position", e => {
@@ -35,6 +38,30 @@ function staticLoadPlaces() {
         {
             name: 'cherry',
             link: './assets/cherries/scene.gltf'
+        },
+        {
+            name: 'cherry',
+            link: './assets/cherries/scene.gltf'
+        },
+        {
+            name: 'cherry',
+            link: './assets/cherries/scene.gltf'
+        },
+        {
+            name: 'cherry',
+            link: './assets/cherries/scene.gltf'
+        },
+        {
+            name: 'cherry',
+            link: './assets/cherries/scene.gltf'
+        },
+        {
+            name: 'cherry',
+            link: './assets/cherries/scene.gltf'
+        },
+        {
+            name: 'cherrytree',
+            link: './assets/cherrytree/scene.gltf'
         },
         {
             name: 'magnemite',
