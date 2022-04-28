@@ -31,11 +31,11 @@ function renderPlaces(places, longitude, latitude) {
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
-        let latitude = latitude + random(-0.0001, 0.0001);
-        let longitude = longitude + random(-0.0001, 0.0001);
+        let randLatitude = latitude + random(-0.0001, 0.0001);
+        let randLongitude = longitude + random(-0.0001, 0.0001);
 
         let model = document.createElement('a-entity');
-        model.setAttribute('gps-projected-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        model.setAttribute('gps-projected-entity-place', `latitude: ${randLatitude}; longitude: ${randLongitude};`);
         model.setAttribute('gltf-model', './assets/' + place.name + '/scene.gltf');
         model.setAttribute('rotation', '0 180 0');
         model.setAttribute('scale', '0.5 0.5 0.5');
