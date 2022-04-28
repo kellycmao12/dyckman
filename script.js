@@ -1,42 +1,3 @@
-// window.onload = () => {
-//     let places = staticLoadPlaces();
-//     renderPlaces(places);
-// };
-
-// function staticLoadPlaces() {
-//    return [
-//        {
-//            name: 'Magnemite',
-//            location: {
-//                lat: 44.496470,
-//                lng: 11.320180,
-//            }
-//        },
-//    ];
-// }
-
-// function renderPlaces(places) {
-//    let scene = document.querySelector('a-scene');
-
-//    places.forEach((place) => {
-//        let latitude = place.location.lat;
-//        let longitude = place.location.lng;
-
-//        let model = document.createElement('a-entity');
-//        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-//        model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
-//        model.setAttribute('rotation', '0 180 0');
-//        model.setAttribute('animation-mixer', '');
-//        model.setAttribute('scale', '0.5 0.5 0.5');
-
-//        model.addEventListener('loaded', () => {
-//            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
-//        });
-
-//        scene.appendChild(model);
-//    });
-// }
-
 let firstLoc = true;
 
 window.onload = () => {
@@ -51,33 +12,29 @@ window.onload = () => {
 };
 
 function setPos(longitude,latitude) {
-        const box = document.createElement("a-box");
-        box.setAttribute('scale', {
-            x: 10, 
-            y: 10,
-            z: 10
-        });
-        box.setAttribute('material', {
-            color: 'red'
-        });
-        box.setAttribute('gps-projected-entity-place', {
-            latitude: latitude+0.0006,
-            longitude: longitude-0.0005
-        });
-        const box2 = document.createElement("a-box");
-        box2.setAttribute('scale', {
-            x: 10, 
-            y: 10,
-            z: 10
-        });
-        box2.setAttribute('material', {
-            color: 'yellow'
-        });
-        box2.setAttribute('gps-projected-entity-place', {
-            latitude: latitude+0.0004,
-            longitude: longitude-0.0001
-        });
-        const sceneEl = document.querySelector("a-scene");
-        sceneEl.appendChild(box);
-        sceneEl.appendChild(box2);
+
+        for (let i = 0; i < 10; i++) {
+            // construct a new box
+            box = new Box({
+                scaleX: 10, 
+                scaleY: 10, 
+                scaleZ: 10, 
+                width: 1, 
+                depth: 1, 
+                height: 1, 
+                red:255, 
+                green:0, 
+                blue:0
+            });
+            
+            box.setAttribute('gps-projected-entity-place', {
+                latitude: latitude + 0.0001 * i,
+                longitude: longitude - 0.0001 * i
+            });
+            
+            const sceneEl = document.querySelector("a-scene");
+            sceneEl.appendChild(box);
+
+        }
+
 }
