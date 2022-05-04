@@ -29,15 +29,23 @@ button {
 #start-screen {
     background-image: url("assets/dyckman farmhouse.jpeg");
     background-size: cover;
+    height: 100%;
+    overflow: hidden;
     background-repeat: no-repeat, no-repeat;
 }
 
 #start-screen .top-banner {
-    width: 96%;
+    width: 80%;
     background-color: white;
     display: flex;
-    justify-content: center;
-    padding: 2%;
+    justify-content: space-between;
+    padding: 2% 10%;
+}
+
+@media (max-width: 450px) {
+    #start-screen .top-banner {
+        justify-content: center;
+    }
 }
 
 .top-banner img {
@@ -52,10 +60,10 @@ button {
 }
 
 #start-screen .title-banner {
-    width: 90%;
+    width: 96%;
     display: flex;
     background-color: #ffffffaa;
-    padding: 5%;
+    padding: 2%;
     align-items: center;
     flex-direction: column;
 }
