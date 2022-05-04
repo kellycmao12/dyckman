@@ -7,7 +7,7 @@ body {
 button {
     border: none;
     padding: 0;
-    margin: 2%;
+    margin: 5%;
     font-size: 20px;
     color: black;
     background-color: #ffffff00;
@@ -15,15 +15,7 @@ button {
 }
 
 #explore-button {
-    width: 20%;
-}
-
-.instructions {
-    position: fixed;
-    top: 5%;
-    font-size: 1.25em;
-    color: white;
-    z-index: 999999;
+    width: 40%;
 }
 
 #start-screen {
@@ -60,16 +52,16 @@ button {
 }
 
 #start-screen .title-banner {
-    width: 96%;
+    width: 90%;
     display: flex;
     background-color: #ffffffaa;
-    padding: 2%;
+    padding: 5%;
     align-items: center;
     flex-direction: column;
 }
 
 #start-screen .app-logo {
-    width: 30%;
+    width: 70%;
 }
 
 #main-screen .top-banner {
