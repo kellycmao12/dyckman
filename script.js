@@ -6,22 +6,6 @@ function staticLoadPlaces() {
             name: 'cherry',
             link: './assets/cherries/scene.gltf'
         },
-        {
-            name: 'cherry',
-            link: './assets/cherries/scene.gltf'
-        },
-        {
-            name: 'cherry',
-            link: './assets/cherries/scene.gltf'
-        },
-        {
-            name: 'cherrytree',
-            link: './assets/cherrytree/scene.gltf'
-        },
-        {
-            name: 'magnemite',
-            link: './assets/magnemite/scene.gltf'
-        },
     ];
 }
 
