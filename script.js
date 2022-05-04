@@ -41,7 +41,6 @@ function startGame() {
 
     const camera = document.querySelector('a-camera');
     window.addEventListener("gps-camera-update-position", e => {
-        console.log(firstLoc);
         if(firstLoc) {
 			firstLoc = false;
             alert(`Got GPS: you are at: ${e.detail.position.longitude} ${e.detail.position.latitude}`);
