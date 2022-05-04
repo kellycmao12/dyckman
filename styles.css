@@ -73,11 +73,22 @@ button {
 }
 
 #main-screen .top-banner {
-    width: 96%;
+    width: 80%;
     background-color: #ffffff00;
     display: flex;
     justify-content: space-between;
-    padding: 2%;
+    padding: 2% 10%;
+}
+
+@media (max-width: 450px) {
+    #main-screen .top-banner {
+        justify-content: center;
+    }
+}
+
+.top-banner .dyckman-logo {
+    width: 100px;
+    height: 65px;
 }
 
 video {
