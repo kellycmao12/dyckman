@@ -52,7 +52,8 @@ function renderPlaces(places, longitude, latitude) {
 function startGame() {
     console.log("start game");
     toggleScreen('start-screen', false);
-    toggleScreen('a-scene', true);
+    toggleScreen('main-screen', true);
+    toggleVideo(true);
 
     const camera = document.querySelector('a-camera');
     window.addEventListener("gps-camera-update-position", e => {
@@ -70,7 +71,16 @@ function startGame() {
 function toggleScreen(id, toggle) {
     let element = document.getElementById(id);
     let display = ( toggle ) ? 'block' : 'none';
-    element.style.display = display; 
+    element.style.display = display;
+}
+
+function toggleVideo(toggle) {
+    let video = document.querySelector('video');
+    if (toggle) {
+        video.setAttribute('style', 'display: block !important; position: absolute; top: 0px; left: 0px;');
+    } else {
+        video.setAttribute('style', 'display: none !important;');
+    }
 }
 
 // function setPos(longitude,latitude) {

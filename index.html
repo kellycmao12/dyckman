@@ -35,7 +35,7 @@
     <!-- A-Frame core library -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script> -->
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script>
       THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
@@ -50,12 +50,26 @@
     <link rel="stylesheet" type="text/css" href="styles.css"/>
   </head>
 
-  <body style="margin: 0; overflow: hidden;">
+  <body style="overflow: hidden;">
     <div id="start-screen" class="screen" style="display:block">
-        <button onclick="startGame()">Start Game</button>
+      <div class="top-banner">
+        <img class="dyckman-logo" src="assets/dyckman logo.png" alt="dyckman farmhouse logo">
+        <img src="assets/asl logo.png" alt="ASL logo">
+      </div>
+      <div class="title-banner">
+        <img class="app-logo" src="assets/app logo.png" alt="app logo">
+        <button onclick="startGame()">
+          <img id="explore-button" src="assets/explore button.png" alt="explore button">
+        </button>
+      </div>
+      
     </div>
-    <div id="main-screen">
-      <div class="centered instructions"></div>
+    <div id="main-screen" class="screen" style="display:none">
+      <div class="top-banner">
+        <img class="dyckman-logo" src="assets/dyckman logo.png" alt="dyckman farmhouse logo">
+        <img class="app-logo" src="assets/app logo.png" alt="app logo">
+      </div>
+      
       <a-scene
         id="a-scene"
         vr-mode-ui="enabled: false"
@@ -64,8 +78,10 @@
         style="display:none">
         <a-camera gps-projected-camera rotation-reader></a-camera>
       </a-scene>
-      <div class="centered">
-        <button data-action="cherry"></button>
+      <div>
+        
+        
+        <!-- <button data-action="cherry">Cherry</button> -->
       </div>
     </div>
     
