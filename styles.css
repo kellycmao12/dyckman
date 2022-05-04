@@ -35,11 +35,11 @@ button {
 }
 
 #start-screen .top-banner {
-    width: 80%;
+    width: 90%;
     background-color: white;
     display: flex;
     justify-content: space-between;
-    padding: 2% 10%;
+    padding: 2% 5%;
 }
 
 @media (max-width: 450px) {
@@ -73,11 +73,11 @@ button {
 }
 
 #main-screen .top-banner {
-    width: 80%;
+    width: 90%;
     background-color: #ffffff00;
     display: flex;
     justify-content: space-between;
-    padding: 2% 10%;
+    padding: 2% 5%;
 }
 
 @media (max-width: 450px) {
