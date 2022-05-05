@@ -47,13 +47,13 @@ function renderPlaces(places, longitude, latitude) {
 function startIntro() {
     toggleScreen('start-screen', false);
     toggleScreen('intro-video-screen', true);
-    const video = document.getElementById('intro-video');
-    video.play();
-    video.addEventListener('ended', showNextButton, false);
-    function showNextButton(e) {
-        const nextBtn = document.getElementById('next-button');
-        nextBtn.style.display = 'block';
-    }
+    // const video = document.getElementById('intro-video');
+    // video.play();
+    // video.addEventListener('ended', showNextButton, false);
+    // function showNextButton(e) {
+    //     const nextBtn = document.getElementById('next-button');
+    //     nextBtn.style.display = 'block';
+    // }
 }
 
 function startAppleAR() {
@@ -68,7 +68,7 @@ function startAppleAR() {
             console.log("got first location");
 			firstLoc = false;
             alert(`Got GPS: you are at: ${e.detail.position.longitude} ${e.detail.position.latitude}`);
-            setPosition(e.detail.position.longitude, e.detail.position.latitude);
+            setPos(e.detail.position.longitude, e.detail.position.latitude);
             let places = staticLoadPlaces();
             renderPlaces(places, e.detail.position.longitude, e.detail.position.latitude);    
         }
@@ -78,13 +78,13 @@ function startAppleAR() {
 function openAppleVideo() {
     toggleScreen('apple-ar-screen', false);
     toggleScreen('apple-video-screen', true);
-    const video = document.getElementById('apple-video');
-    video.play();
-    video.addEventListener('ended', showNextButton, false);
-    function showNextButton(e) {
-        const nextBtn = document.getElementById('next-button');
-        nextBtn.style.display = 'block';
-    }
+    // const video = document.getElementById('apple-video');
+    // video.play();
+    // video.addEventListener('ended', showNextButton, false);
+    // function showNextButton(e) {
+    //     const nextBtn = document.getElementById('next-button');
+    //     nextBtn.style.display = 'block';
+    // }
 }
 
 function startArtAR() {
