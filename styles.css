@@ -102,8 +102,12 @@ video {
     height: auto;
 }
 
-#a-scene-apple {
+a-scene {
     z-index: 0;
+}
+
+a-entity {
+    z-index: 1000;
 }
 
 #intro-video, #apple-video, #art-video {
@@ -128,7 +132,7 @@ video {
 }
 
 #next-button {
-    top: 50%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

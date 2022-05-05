@@ -1,40 +1,56 @@
 let firstLoc = true;
 
-function staticLoadPlaces() {
+function staticLoadApple() {
     return [
         {
-            name: 'cherry',
-            link: './assets/cherry/scene.gltf'
-        },
-        // {
-        //     name: 'apple',
-        //     link: './assets/apple/scene.gltf'
-        // },
-        // {
-        //     name: 'apple',
-        //     link: './assets/apple/scene.gltf'
-        // },
-        // {
-        //     name: 'apple tree',
-        //     link: './assets/apple tree/scene.gltf'
-        // },
+            name: 'apple',
+            link: './assets/apple/scene.gltf'
+        }
     ];
 }
 
-function renderPlaces(places, longitude, latitude) {
-    let scene = document.querySelector('a-scene-apple');
+function staticLoadArt() {
+    return [
+        {
+            name: 'reggie black',
+            link: './assets/reggie black.obj'
+        }
+    ];
+}
+
+function renderApple(places, longitude, latitude) {
+    let scene = document.querySelector('#a-scene-apple');
 
     places.forEach((place) => {
-        let randNum = Math.random()/10000;
-        randNum *= Math.round(Math.random()) ? 1 : -1;
-        let randLatitude = latitude + randNum;
-        randNum *= Math.round(Math.random()) ? 1 : -1;
-        let randLongitude = longitude + randNum;
 
         let model = document.createElement('a-entity');
-        model.setAttribute('gps-projected-entity-place', `latitude: ${randLatitude}; longitude: ${randLongitude};`);
+        model.setAttribute('gps-projected-entity-place', {
+            latitude: latitude+0.0004,
+            longitude: longitude-0.0001
+        });
         model.setAttribute('gltf-model', place.link);
-        model.setAttribute('scale', '0.5 0.5 0.5');
+        model.setAttribute('scale', '0.4 0.4 0.4');
+
+        model.addEventListener('loaded', () => {
+            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
+        });
+
+        scene.appendChild(model);
+    });
+}
+
+function renderArt(places, longitude, latitude) {
+    let scene = document.querySelector('#a-scene-art');
+
+    places.forEach((place) => {
+
+        let model = document.createElement('a-entity');
+        model.setAttribute('gps-projected-entity-place', {
+            latitude: latitude+0.0004,
+            longitude: longitude-0.0001
+        });
+        model.setAttribute('obj-model', place.link);
+        model.setAttribute('scale', '50 50 50');
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
@@ -47,13 +63,13 @@ function renderPlaces(places, longitude, latitude) {
 function startIntro() {
     toggleScreen('start-screen', false);
     toggleScreen('intro-video-screen', true);
-    // const video = document.getElementById('intro-video');
-    // video.play();
-    // video.addEventListener('ended', showNextButton, false);
-    // function showNextButton(e) {
-    //     const nextBtn = document.getElementById('next-button');
-    //     nextBtn.style.display = 'block';
-    // }
+    const video = document.getElementById('intro-video');
+    video.play();
+    video.addEventListener('ended', showNextButton, false);
+    function showNextButton(e) {
+        const nextBtn = document.getElementById('next-button');
+        nextBtn.style.display = 'block';
+    }
 }
 
 function startAppleAR() {
@@ -68,9 +84,9 @@ function startAppleAR() {
             console.log("got first location");
 			firstLoc = false;
             alert(`Got GPS: you are at: ${e.detail.position.longitude} ${e.detail.position.latitude}`);
-            setPos(e.detail.position.longitude, e.detail.position.latitude);
-            let places = staticLoadPlaces();
-            renderPlaces(places, e.detail.position.longitude, e.detail.position.latitude);    
+            // setPos(e.detail.position.longitude, e.detail.position.latitude);
+            let places = staticLoadApple();
+            renderApple(places, e.detail.position.longitude, e.detail.position.latitude);    
         }
     });
 }
@@ -78,13 +94,13 @@ function startAppleAR() {
 function openAppleVideo() {
     toggleScreen('apple-ar-screen', false);
     toggleScreen('apple-video-screen', true);
-    // const video = document.getElementById('apple-video');
-    // video.play();
-    // video.addEventListener('ended', showNextButton, false);
-    // function showNextButton(e) {
-    //     const nextBtn = document.getElementById('next-button');
-    //     nextBtn.style.display = 'block';
-    // }
+    const video = document.getElementById('apple-video');
+    video.play();
+    video.addEventListener('ended', showNextButton, false);
+    function showNextButton(e) {
+        const nextBtn = document.getElementById('next-button');
+        nextBtn.style.display = 'block';
+    }
 }
 
 function startArtAR() {
@@ -93,16 +109,9 @@ function startArtAR() {
     toggleVideo(true);
 
     const camera = document.querySelector('a-camera');
-    window.addEventListener("gps-camera-update-position", e => {
-        if(firstLoc) {
-            console.log("got first location");
-			firstLoc = false;
-            alert(`Got GPS: you are at: ${e.detail.position.longitude} ${e.detail.position.latitude}`);
-            setPos(e.detail.position.longitude, e.detail.position.latitude);
-            let places = [{ name: 'reggie black', link: './assets/reggie black.obj' }];
-            renderPlaces(places, e.detail.position.longitude, e.detail.position.latitude);    
-        }
-    });
+    let places = staticLoadArt();
+    renderArt(places, e.detail.position.longitude, e.detail.position.latitude);  
+    
 }
 
 function openArtVideo() {
