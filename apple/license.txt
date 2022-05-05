@@ -1,0 +1,11 @@
+Model Information:
+* title:	Red Apple
+* source:	https://sketchfab.com/3d-models/red-apple-7a179f2b4837457eafa66c2f7094d280
+* author:	RPSebb (https://sketchfab.com/RPSebb)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Red Apple" (https://sketchfab.com/3d-models/red-apple-7a179f2b4837457eafa66c2f7094d280) by RPSebb (https://sketchfab.com/RPSebb) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

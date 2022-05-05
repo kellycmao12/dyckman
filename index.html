@@ -42,14 +42,18 @@
   </head>
 
   <body style="overflow: hidden;">
+    
     <div id="start-screen" class="screen" style="display:block">
+
       <div class="top-banner">
         <img class="dyckman-logo" src="assets/dyckman logo.png" alt="dyckman farmhouse logo">
         <img src="assets/asl logo.png" alt="ASL logo">
       </div>
+
       <div class="title-banner">
         <img class="app-logo" src="assets/app logo.png" alt="app logo"> 
       </div>
+
       <div id="start-button-container">
         <button id="start-button" onclick="startGame()">
           <img src="assets/english button.png" alt="english button">
@@ -58,20 +62,21 @@
           <img src="assets/spanish button.png" alt="spanish button">
         </button>
       </div>
-      
+
     </div>
+
     <div id="main-screen" class="screen" style="display:none">
+
       <div class="top-banner">
+        
         <img class="dyckman-logo" src="assets/dyckman logo.png" alt="dyckman farmhouse logo">
         <img class="app-logo" src="assets/app logo.png" alt="app logo">
         <button id="asl-button" onclick="openVideo()">
           <img src="assets/asl logo.png" alt="ASL video button">
         </button>
           
-        </div>
-        
       </div>
-      
+
       <a-scene
         id="a-scene"
         vr-mode-ui="enabled: false"
@@ -79,12 +84,7 @@
         renderer='antialias: true; alpha: true'>
         <a-camera gps-projected-camera rotation-reader></a-camera>
       </a-scene>
-      <div>
-
         
-
-      <!-- <button data-action="cherry">Cherry</button> -->
-      </div>
     </div>
     
   </body>
