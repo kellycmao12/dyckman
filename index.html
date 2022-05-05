@@ -36,6 +36,7 @@
     
     <!-- my script file -->
     <script src='script.js'></script>
+
     <!-- my CSS file -->
     <link rel="stylesheet" type="text/css" href="styles.css"/>
   </head>
@@ -47,9 +48,14 @@
         <img src="assets/asl logo.png" alt="ASL logo">
       </div>
       <div class="title-banner">
-        <img class="app-logo" src="assets/app logo.png" alt="app logo">
-        <button onclick="startGame()">
-          <img id="explore-button" src="assets/explore button.png" alt="explore button">
+        <img class="app-logo" src="assets/app logo.png" alt="app logo"> 
+      </div>
+      <div id="start-button-container">
+        <button id="start-button" onclick="startGame()">
+          <img src="assets/english button.png" alt="english button">
+        </button>
+        <button id="start-button" onclick="startGame()">
+          <img src="assets/spanish button.png" alt="spanish button">
         </button>
       </div>
       
@@ -58,6 +64,12 @@
       <div class="top-banner">
         <img class="dyckman-logo" src="assets/dyckman logo.png" alt="dyckman farmhouse logo">
         <img class="app-logo" src="assets/app logo.png" alt="app logo">
+        <button id="asl-button" onclick="openVideo()">
+          <img src="assets/asl logo.png" alt="ASL video button">
+        </button>
+          
+        </div>
+        
       </div>
       
       <a-scene
@@ -68,9 +80,10 @@
         <a-camera gps-projected-camera rotation-reader></a-camera>
       </a-scene>
       <div>
+
         
-        
-        <!-- <button data-action="cherry">Cherry</button> -->
+
+      <!-- <button data-action="cherry">Cherry</button> -->
       </div>
     </div>
     

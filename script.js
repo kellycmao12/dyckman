@@ -3,8 +3,12 @@ let firstLoc = true;
 function staticLoadPlaces() {
     return [
         {
-            name: 'cherry',
-            link: './assets/cherries/scene.gltf'
+            name: 'apple',
+            link: './assets/apple/scene.gltf'
+        },
+        {
+            name: 'apple tree',
+            link: './assets/apple tree/scene.gltf'
         },
     ];
 }
@@ -63,29 +67,13 @@ function toggleVideo(toggle) {
         video.setAttribute('style', 'display: block !important; position: absolute; top: 0px; left: 0px;');
     } else {
         video.setAttribute('style', 'display: none !important;');
+        video.play();
     }
 }
 
-// function setPos(longitude,latitude) {
+function openVideo() {
+    const popup = document.getElementById("asl-button");
+    popup.classList.toggle("show");
 
-//         for (let i = 0; i < 10; i++) {
-            
-//             box.setAttribute('scale', {
-//                 x: 10, 
-//                 y: 10,
-//                 z: 10
-//             });
-//             box.setAttribute('material', {
-//                 color: 'red'
-//             });
-//             const box = document.createElement("a-box");
-//             box.setAttribute('gps-projected-entity-place', {
-//                 latitude: latitude + 0.0001 * i,
-//                 longitude: longitude - 0.0001 * i
-//             });
+}
 
-//             const sceneEl = document.querySelector("a-scene");
-//             sceneEl.appendChild(box);
-//         }
-        
-// }
